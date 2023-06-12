@@ -1,0 +1,531 @@
+@api = http://localhost:3001/
+
+#####Tabla Actividades
+GET {{api}}activities/get-activities
+
+###po
+GET {{api}}activities/get-activity/5
+
+###
+GET {{api}}activities/get-activities_count
+
+###
+POST {{api}}activities/create-activity
+Content-Type: application/json
+
+{
+    "Nombre": "Alimentar ganado",
+    "Descripcion":"test"
+}
+
+###
+DELETE {{api}}activities/delete-activity/4
+
+
+
+#####Tabla Materia Prima
+
+GET {{api}}materiaPrima/get-materiasPrimas
+
+###
+POST {{api}}materiaPrima/save-materiaPrima
+Content-Type: application/json
+
+{
+    "Nombre": "Costales",
+    "Descripcion":"Almacenar alimento",
+    "Cantidad": 150
+}
+
+###
+POST {{api}}materiaPrima/save-materiaPrima
+Content-Type: application/json
+
+{
+    "Nombre": "Tractor",
+    "Descripcion":"Sembrar alimento",
+    "Cantidad": 100
+}
+
+### Direcciones
+###
+GET {{api}}direcciones/get-dataDirecciones
+
+###
+GET {{api}}direcciones/get-dataDireccion/1
+
+###
+GET {{api}}direcciones/get-direcciones_count
+
+###
+POST {{api}}direcciones/create-direccion
+Content-Type: application/json
+
+{
+    "Calle": "Paseo de la Asuncion Norte",
+    "Numero": "345",
+    "Colonia": "Jardines de Aguascalientes",
+    "CP": 20270,
+    "Municipio": "Aguascalientes",
+    "Estado": "Aguascalientes",
+    "Pais": "Mexico"
+}
+
+###
+DELETE {{api}}direcciones/delete-direccion/3
+
+###
+PUT {{api}}direcciones/update-direccion/1
+Content-Type: application/json
+
+{
+    "Calle": "Calle Modificada",
+    "Numero": 345,
+    "Colonia": "Jardines de Aguascalientes",
+    "CP": 20270,
+    "Municipio": "Aguascalientes",
+    "Estado": "Aguascalientes",
+    "Pais": "Mexico"
+}
+
+###
+PUT {{api}}alimentoAnimal/update-direccion/1
+Content-Type: application/json
+
+{
+    "Calle": "Paseo de la Asuncion Norte",
+    "Numero": 345,
+    "Colonia": "Jardines de Aguascalientes",
+    "CP": 20270,
+    "Municipio": "Aguascalientes",
+    "Estado": "Aguascalientes",
+    "Pais": "Mexico"
+}
+
+### Alimento Animal
+###
+GET {{api}}alimentoAnimal/get-dataAlimentos
+
+###
+GET {{api}}alimentoAnimal/get-dataAlimento/1
+
+###
+GET {{api}}alimentoAnimal/get-alimento_cout
+
+###
+POST {{api}}alimentoAnimal/create-alimentoAnimal
+Content-Type: application/json
+
+{
+    "Nombre": "Forraje",
+    "Descripcion":"Vegetales procesados para ser proporcionado como alimento a las vacas",
+    "Cantidad": 1020,
+    "TipoUnidad":"Kg"
+}
+
+###
+POST {{api}}alimentoAnimal/create-alimentoAnimal
+Content-Type: application/json
+
+{
+    "Nombre": "Maiz",
+    "Descripcion":"Semilla procesada que sirve de alimento para las gallinas",
+    "Cantidad": 600,
+    "TipoUnidad":"Kg"
+}
+
+###
+POST {{api}}alimentoAnimal/create-alimentoAnimal
+Content-Type: application/json
+
+{
+    "Nombre": "Forraje Engorda",
+    "Descripcion":"Vegetales procesados para ser proporcionado como alimento a las vacas de tipo engorda",
+    "Cantidad": 1020,
+    "TipoUnidad":"Kg"
+}
+
+
+###
+PUT {{api}}alimentoAnimal/update-alimentoAnimal/1
+Content-Type: application/json
+
+{
+    "Nombre": "Forraje Produccion",
+    "Descripcion":"Vegetales procesados para ser proporcionado como alimento a las vacas de tipo produccion",
+    "Cantidad": 1020,
+    "TipoUnidad":"Kg"
+}
+
+
+### Direcciones
+###
+POST {{api}}direcciones/create-direccion
+Content-Type: application/json
+
+{
+    "Calle":"Editorialistas",
+    "Numero":209,
+    "Colonia": "Periodistas",
+    "CP":20299,
+    "Municipio": "Aguascalientes",
+    "Estado": "Aguascalientes",
+    "Pais": "Mexico"
+}
+
+###
+GET {{api}}direcciones/get-dataDireccion/1
+
+### Clientes
+###
+GET {{api}}clientes/get-dataClientes
+
+###
+GET {{api}}clientes/get-dataCliente/1
+
+###
+GET {{api}}clientes/get-clientes_count
+
+###
+POST {{api}}clientes/create-cliente
+Content-Type: application/json
+
+{
+    "id_Direccion": 7,
+    "Nombre": "Isaac",
+    "Correo": "isaac@isc.com",
+    "Estatus": "1",
+    "Cuenta": "isc",
+    "Pass": "contra"
+}
+
+###
+POST {{api}}clientes/create-cliente
+Content-Type: application/json
+
+{
+    "id_Direccion": 2,
+    "Nombre": "Francisco",
+    "Correo": "paco@isc.com",
+    "Estatus": "1",
+    "Cuenta": "isc2022",
+    "Pass": "contrasena"
+}
+
+###
+DELETE {{api}}clientes/delete-cliente/3
+
+###
+PUT {{api}}clientes/update-cliente/2
+Content-Type: application/json
+
+{
+    "id_Direccion": 4,
+    "Nombre": "Fraco",
+    "Correo": "Fraco@isc.com",
+    "Estatus": "1"
+}
+
+
+### Proveedores
+###
+GET {{api}}proveedores/get-dataProveedores
+
+###
+GET {{api}}proveedores/get-dataproveedor/1
+
+###
+GET {{api}}proveedores/get-proveedores_count
+
+###
+POST {{api}}proveedores/create-proveedor
+Content-Type: application/json
+
+{
+    "id_Direccion": 3,
+    "RazonSocial": "Isaac",
+    "Telefono": "4499504914",
+    "Correo": "isaac@isc.com",
+    "Estatus": "1"
+}
+
+###
+DELETE {{api}}proveedores/delete-proveedor/1
+
+###
+PUT {{api}}proveedores/update-proveedor/25
+Content-Type: application/json
+
+{
+    "id_Direccion": 4,
+    "RazonSocial": "Fraco",
+    "Telefono": "4499504914",
+    "Correo": "Fraco@isc.com",
+    "Estatus": "1"
+}
+
+
+### Personal
+###
+GET {{api}}personal/get-dataPersonal
+
+###
+GET {{api}}personal/get-dataPersona/1
+
+###
+GET {{api}}personal/get-persona_count
+
+###
+POST {{api}}personal/create-persona
+Content-Type: application/json
+
+{
+    "id_Actividad": 2,
+    "id_Material": 1006,
+    "Nombre": "Isaac",
+    "Puesto": "Administrador",
+    "Salario": 1000000.343,
+    "Turno": 1,
+    "Estatus": "1",
+    "Cuenta": "root2",
+    "Contra": "root"
+}
+
+###
+POST {{api}}personal/create-persona
+Content-Type: application/json
+
+{
+    "id_Actividad": 1,
+    "id_Material": 1,
+    "Nombre": "Francisco",
+    "Puesto": "Director General",
+    "Salario": 100000000.50,
+    "Turno": 1,
+    "Estatus": "1",
+    "Cuenta": "CHIEF",
+    "Contra": "Hola"
+}
+
+###
+DELETE {{api}}personal/delete-persona/216
+
+###
+PUT {{api}}personal/update-persona/2
+Content-Type: application/json
+
+{
+    "id_Actividad": 2,
+    "id_Material": "1",
+    "Nombre": "Isaac",
+    "Puesto": "Jefe",
+    "Salario": 1000000.343,
+    "Turno": 1,
+    "Estatus": "1",
+    "Cuenta": "asd",
+    "Contra": "hola"
+}
+
+###
+GET {{api}}personal/response-time
+
+
+### Alimento Venta
+###
+GET {{api}}alimentoVenta/get-dataAlimentoVenta
+
+###
+GET {{api}}alimentoVenta/get-dataAlimento/1
+
+###
+GET {{api}}alimentoVenta/get-alimentoVenta_count
+
+###
+POST {{api}}alimentoVenta/create-alimento
+Content-Type: application/json
+
+{
+    "Nombre": "Isaac",
+    "PrecioUnitario": 10.78,
+    "Cantidad": 50.5,
+    "TipoUnidad": "Kg"
+}
+
+###
+DELETE {{api}}alimentoVenta/delete-alimento/1
+
+###
+PUT {{api}}alimentoVenta/update-alimento/2
+Content-Type: application/json
+
+{
+    "Nombre": "Fraco",
+    "PrecioUnitario": 10.78,
+    "Cantidad": 50.5,
+    "TipoUnidad": "Kg"
+}
+
+
+### Compras
+###
+GET {{api}}compras/get-compras
+
+###
+GET {{api}}compras/get-compra/1
+
+###
+GET {{api}}compras/get-comprasCount
+
+###
+POST {{api}}compras/create-compra
+Content-Type: application/json
+
+{
+    "id_Proveedor":1,
+    "id_Producto":2,
+    "id_Personal":5,
+    "Cantidad":300,
+    "Precio_Unitario":300.70,
+    "Fecha":"2022-10-01"
+}
+
+###
+DELETE {{api}}compras/delete-compra/2
+
+
+### Ventas
+###
+GET {{api}}ventas/get-ventas
+
+###
+GET {{api}}ventas/get-venta/1
+
+###
+GET {{api}}ventas/get-ventasCount
+
+###
+POST {{api}}ventas/create-venta
+Content-Type: application/json
+
+{
+    "id_Cliente":2,
+    "id_Producto":1,
+    "Cantidad":5000,
+    "Precio":200,
+    "Total":50000,
+    "Fecha":"2022-10-01"
+}
+
+###
+DELETE {{api}}ventas/delete-venta/1/2
+
+
+### Tipo_Animales
+###
+GET {{api}}tipoAnimales/get-tipo_animales
+
+###
+GET {{api}}tipoAnimales/get-tipo_animal/1
+
+###
+GET {{api}}tipoAnimales/get-tipo_animales_count
+
+###
+POST {{api}}tipoAnimales/create-tipo_animal
+Content-Type: application/json
+
+{
+    "id_Alimento": 1,
+    "id_Alimento_Venta": 2,
+    "id_Personal": 2,
+    "Nombre": "Gallina",
+    "Cantidad": 50000,
+    "Precio": 1000.00,
+    "Comida": "0"
+}
+
+### consulta mia
+POST {{api}}tipoAnimales/create-tipo_animal
+Content-Type: application/json
+
+{
+    "id_Alimento": 2,
+    "id_Alimento_Venta": 1,
+    "id_Personal": 5,
+    "Nombre": "Gallina",
+    "Cantidad": 50000,
+    "Precio": 1000.00,
+    "Comida": "0"
+}
+
+###
+DELETE {{api}}tipoAnimales/delete-tipo_animal/1
+
+
+
+### Animales
+###
+GET {{api}}animales/get-animales
+
+###
+GET {{api}}animales/get-animal/1
+
+###
+GET {{api}}animales/get-animales_count
+
+###
+POST {{api}}animales/create-animal
+Content-Type: application/json
+
+{
+    "id_Tipo_Animal": 2,
+    "Peso": 10.5,
+    "Litros_Dia": 0,
+    "Litros_Total": 0,
+    "Huevos_Dia": 10,
+    "Huevos_Total": 50
+}
+
+###
+POST {{api}}animales/create-animal
+Content-Type: application/json
+
+{
+    "id_Tipo_Animal": 2, 
+    "Peso":10.5,
+    "Litros_Dia":0,
+    "Litros_Total":0,
+    "Huevos_Dia":10,
+    "Huevos_Total":100
+}
+
+###
+DELETE {{api}}animales/delete-animal/1
+
+### login
+POST {{api}}login/validar-usuario
+Content-Type: application/json
+
+{
+    "Cuenta": {
+        "user": "isc"
+    },
+    "Contra": {
+        "pass": "hola"
+    }
+}
+
+###
+GET {{api}}login/query12
+
+### Response Time
+GET {{api}}response/faster-serverResponse
+
+###
+GET {{api}}response/slowest-serverResponse
+
+###
+GET {{api}}response/best-responseTime
+
+###
+GET http://172.16.130.201:3001/response/best-responseTime
