@@ -60,7 +60,7 @@ VentasCtr.createVenta = async (req, res) => {
     const table = req.body.table;
 
     // validacion
-    const connection = await connect();
+    const connection = await localConnection();
     const [rows] = await connection.query('SELECT * FROM clientes WHERE id_Cliente = ?', [
         id_Cliente
     ]);

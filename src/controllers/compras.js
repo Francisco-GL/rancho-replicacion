@@ -66,14 +66,17 @@ ComprasCtr.createCompra = async (req, res) => {
     const Fecha = new Date();
     const onlyUpdate = req.body.onlyUpdate;
     const valueToChange = req.body.valueToChange
-    console.log('body: ', req.body);
+    console.log('body -> : ', req.body);
 
     // validacion
     const connection = await localConnection();
 
     const data = await connection.query('SELECT * FROM alimento_animal WHERE id = ?', [id_Producto]);
+    // console.log('data: -> ', data[0][0].Cantidad);
     const cantidad = data[0][0].Cantidad;
+    let idGenered = 0;
     if (!onlyUpdate) {
+        console.log('entre en !onlyUpdate');
         const [results] = await connection.query('INSERT INTO compras_mayores (id_Proveedor,id_Producto, id_Personal, Cantidad, Precio_Unitario, Fecha) VALUES (?,?,?,?,?,?)', [
             id_Proveedor,
             id_Producto,
@@ -97,6 +100,7 @@ ComprasCtr.createCompra = async (req, res) => {
             objUpdate,
             id_Producto
         ]);
+        idGenered = results.insertId;
     } else {
         let objUpdate = {
             id: id_Producto,
@@ -113,7 +117,7 @@ ComprasCtr.createCompra = async (req, res) => {
     }
 
     res.json({
-        id: results.insertId,
+        id: idGenered,
         ...req.body
     });
 
